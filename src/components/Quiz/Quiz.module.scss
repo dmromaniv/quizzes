@@ -1,0 +1,23 @@
+.contentWrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  padding: 50px 0 5px;
+}
+
+.amount {
+  position: absolute;
+  top: 5px;
+
+  padding: 2px;
+
+  font-size: 12px;
+
+  background-color: rgb(0, 119, 255);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

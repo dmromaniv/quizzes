@@ -1,11 +1,17 @@
+import { useDispatch } from "react-redux";
 import "./App.scss";
-import QuizzesList from "./components/QuizzesList/QuizzesList";
+
+import HomePage from "./pages/HomePage/HomePage";
+import { getQuizCategories } from "./redux/quizzes/quizzesOperations";
 
 function App() {
+  const dispatch = useDispatch();
+
+  dispatch(getQuizCategories());
   return (
     <>
       <div className="container">
-        <QuizzesList />
+        <HomePage />
       </div>
     </>
   );
