@@ -20,6 +20,8 @@ export default function HomePage() {
     const list = listRef.current.children[randomQuizNumber];
     const { id, amount } = list.dataset;
 
+    sessionStorage.setItem("activeSession", "true");
+
     navigate(`/quiz/${id}/${amount}`, { replace: true });
   };
 
