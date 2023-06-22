@@ -65,8 +65,8 @@ export default function QuestionCard() {
     if (checkLastQuestion(questionIndex)) {
       const currentTime = new Date();
       const totalTime = formatTimestamp(currentTime - time);
-      dispatch(addTotalTime(totalTime));
 
+      dispatch(addTotalTime(totalTime));
       navigate("/quiz/result", { replace: true });
     }
 

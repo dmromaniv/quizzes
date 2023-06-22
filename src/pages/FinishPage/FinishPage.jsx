@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { resetAllStats } from "../../redux/stats/statsSlice";
+import { resetAllStats } from "@/redux/stats/statsSlice";
 import QuizResult from "@/components/QuizResult/QuizResult";
 import styles from "./FinishPage.module.scss";
 

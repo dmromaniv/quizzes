@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 
 import { selectStatsInfo } from "@/redux/selectors";
-
 import styles from "./QuizResult.module.scss";
 
 export default function QuizResult() {
