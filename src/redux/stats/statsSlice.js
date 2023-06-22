@@ -26,6 +26,9 @@ const statsSlice = createSlice({
     addTotalTime(state, { payload }) {
       state.totalTime = payload;
     },
+    resetAllStats() {
+      return defaultState;
+    },
   },
 });
 
@@ -34,5 +37,6 @@ export const {
   updateStats,
   addQuestionsAmount,
   addTotalTime,
+  resetAllStats,
 } = statsSlice.actions;
 export const quizStatsReducer = statsSlice.reducer;

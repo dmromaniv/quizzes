@@ -1,16 +1,17 @@
 import { decode } from "html-entities";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { formatTimestamp } from "@/helpers/formatTime";
 import {
   addIncorrectAnswers,
   updateStats,
   addTotalTime,
+  resetAllStats,
 } from "@/redux/stats/statsSlice";
 import { selectQuestions } from "@/redux/selectors";
 import styles from "./QuestionCard.module.scss";
-import { useNavigate } from "react-router-dom";
 
 export default function QuestionCard() {
   const dispatch = useDispatch();
@@ -73,6 +74,7 @@ export default function QuestionCard() {
     }, 700);
 
     setCheckedStatus(false);
+    setSelectedOption("");
   }
 
   const handleInputChange = (event) => {
@@ -81,6 +83,7 @@ export default function QuestionCard() {
   };
 
   function handleButtonClick() {
+    dispatch(resetAllStats());
     navigate("/", { replace: true });
   }
 
