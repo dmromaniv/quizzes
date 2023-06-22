@@ -1,27 +1,21 @@
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { getRandomNumber } from "@/helpers/getRandomCategories";
-import { getQuestions } from "@/redux/questions/questionsOperations";
-
 import styles from "./Quiz.module.scss";
 
 export default function Quiz({ id, category }) {
-  const dispatch = useDispatch();
-
-  const questionsNumber = getRandomNumber(10, 30);
-
-  function handleButtonClick() {
-    dispatch(getQuestions({ questionsNumber, categoryId: id }));
-  }
+  const questionsNumber = getRandomNumber(4, 6);
 
   return (
     <div className={styles.contentWrapper}>
       <p className={styles.amount}> {questionsNumber} questions </p>
       <div className={styles.textContent}>
-        <p>{category}</p>
+        <p className={styles.category}>{category}</p>
       </div>
       <div>
-        <button onClick={handleButtonClick}>Play</button>
+        <Link to={`/quiz/${id}/${questionsNumber}`} replace={true}>
+          <button className={styles.button}>Play</button>
+        </Link>
       </div>
     </div>
   );

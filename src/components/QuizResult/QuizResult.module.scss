@@ -1,0 +1,27 @@
+@import "@/stylesheets/_vars.scss";
+
+.list {
+  padding-left: 50px;
+  list-style-type: square;
+  color: $accentCl;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.text {
+  text-align: left;
+  font-size: 18px;
+
+  color: $mainTextCl;
+}
+
+.correct {
+  color: $correctCl;
+}
+
+.incorrect {
+  color: $incorrectCl;
+}

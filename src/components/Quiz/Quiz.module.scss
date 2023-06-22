@@ -11,13 +11,27 @@
 
 .amount {
   position: absolute;
-  top: 5px;
+  top: 10px;
 
   padding: 2px;
 
   font-size: 12px;
 
-  background-color: rgb(0, 119, 255);
+  background-color: rgb(0, 0, 0);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.category {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+
+  text-align: center;
 }

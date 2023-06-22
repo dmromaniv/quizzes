@@ -1,18 +1,25 @@
 import { useDispatch } from "react-redux";
-import "./App.scss";
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import { getQuizCategories } from "./redux/quizzes/quizzesOperations";
 
 import HomePage from "./pages/HomePage/HomePage";
-import { getQuizCategories } from "./redux/quizzes/quizzesOperations";
+import PlayPage from "./pages/PlayPage/PlayPage";
+import FinishPage from "./pages/FinishPage/FinishPage";
+import "./App.scss";
 
 function App() {
   const dispatch = useDispatch();
-
   dispatch(getQuizCategories());
+
   return (
     <>
-      <div className="container">
-        <HomePage />
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz/:id/:amount" element={<PlayPage />} />
+        <Route path="/quiz/result" element={<FinishPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </>
   );
 }

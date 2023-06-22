@@ -1,0 +1,33 @@
+@import "@/stylesheets/_vars.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  margin-bottom: 20px;
+
+  min-height: 55px;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.subTitle {
+  margin-bottom: 20px;
+
+  font-size: 10px;
+  text-align: left;
+}
+
+.label {
+  display: block;
+
+  text-align: left;
+}
+
+.button {
+  margin-top: 40px;
+}
