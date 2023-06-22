@@ -1,4 +1,6 @@
 import { decode } from "html-entities";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +41,7 @@ export default function QuestionCard() {
     event.preventDefault();
 
     if (!isChecked) {
-      console.log("Choose");
+      toast.info("Select an answer to move forward");
       return;
     }
 
@@ -143,6 +145,7 @@ export default function QuestionCard() {
             {checkLastQuestion(questionIndex) ? "Check all results" : "Submit"}
           </button>
         </form>
+        <ToastContainer />
       </div>
       <button className={styles.button} onClick={handleButtonClick}>
         Cancel and return home

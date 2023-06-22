@@ -12,7 +12,7 @@ export async function fetchQuizCategories() {
 
 export async function fetchQuestionsByCategory(amount, categoryId) {
   const response = await axiosInstance.get(
-    `api.php?amount=${amount}&category=${categoryId}&type=boolean`
+    `api.php?amount=${amount}&category=${categoryId}`
   );
 
   return response;

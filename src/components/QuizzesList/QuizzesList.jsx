@@ -10,7 +10,6 @@ import {
 import Quiz from "../Quiz/Quiz";
 import styles from "./QuizzesList.module.scss";
 
-
 const QuizzesList = forwardRef(function QuizzesList(_, ref) {
   const allQuizCategories = useSelector(selectQuizCategories);
 
@@ -24,7 +23,7 @@ const QuizzesList = forwardRef(function QuizzesList(_, ref) {
     <ul className={styles.list} ref={ref}>
       {randomCategories &&
         randomCategories.map(({ id, name }) => {
-          questionAmount = getRandomNumber(4, 8);
+          questionAmount = getRandomNumber(7, 20);
           return (
             <li
               key={id}
