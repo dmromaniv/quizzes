@@ -57,7 +57,9 @@ export default function HomePage() {
           <div className={styles.listWrapper}>
             <QuizzesList ref={listRef} />
           </div>
-          <button onClick={handleButtonClick}>I`am luck</button>
+          <div className={styles.buttonWrapper}>
+            <button onClick={handleButtonClick}>I`am luck</button>
+          </div>
         </>
       )}
     </div>
