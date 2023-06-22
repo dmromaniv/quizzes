@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 
-import { getRandomNumber } from "@/helpers/getRandomCategories";
 import styles from "./Quiz.module.scss";
 
-export default function Quiz({ id, category }) {
-  const questionsNumber = getRandomNumber(4, 6);
+export default function Quiz({ id, category, amount }) {
+  function handleClick() {
+    sessionStorage.setItem("activeSession", "true");
+  }
 
   return (
     <div className={styles.contentWrapper}>
-      <p className={styles.amount}> {questionsNumber} questions </p>
+      <p className={styles.amount}> {amount} questions </p>
       <div className={styles.textContent}>
         <p className={styles.category}>{category}</p>
       </div>
       <div>
-        <Link to={`/quiz/${id}/${questionsNumber}`} replace={true}>
+        <Link to={`/quiz/${id}/${amount}`} onClick={handleClick} replace={true}>
           <button className={styles.button}>Play</button>
         </Link>
       </div>
