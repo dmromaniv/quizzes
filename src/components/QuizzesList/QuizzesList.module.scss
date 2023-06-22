@@ -4,12 +4,24 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
+  @media screen and (min-width: $mobileWidth) and (max-width: $tabletWidth) {
+    justify-content: center;
+  }
 }
 
 .listItem {
-  flex-basis: calc((100% - 120px) / 5);
+  flex-basis: 70%;
   height: 200px;
 
   box-shadow: $shadow;
   border-radius: 10px;
+
+  @media screen and (min-width: $tabletWidth) {
+    flex-basis: calc((100% - 60px) / 3);
+  }
+
+  @media screen and (min-width: $desktopWidth) {
+    flex-basis: calc((100% - 120px) / 5);
+  }
 }

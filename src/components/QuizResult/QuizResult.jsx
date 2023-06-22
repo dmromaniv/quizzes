@@ -12,37 +12,49 @@ export default function QuizResult() {
       <h1>Your result</h1>
       <ol className={styles.list}>
         <li>
-          <p className={styles.text}>
-            Total score: <span className={styles.number}>{totalPoints}</span>,
-            correct:&#32;
-            <span className={`${styles.correct} ${styles.number}`}>
-              {correctAnswersCounter}
-            </span>
-            , incorrect:&#32;
-            <span className={`${styles.number} ${styles.incorrect}`}>
-              {questionsAmount - correctAnswersCounter}
-            </span>
-          </p>
+          <div className={styles.text}>
+            <p>
+              Total score: <span className={styles.number}>{totalPoints},</span>
+            </p>
+            <p>
+              correct:&#32;
+              <span className={`${styles.correct} ${styles.number}`}>
+                {correctAnswersCounter}
+              </span>
+              , incorrect:&#32;
+              <span className={`${styles.number} ${styles.incorrect}`}>
+                {questionsAmount - correctAnswersCounter}
+              </span>
+            </p>
+          </div>
         </li>
         <li>
-          <p className={styles.text}>
-            <span className={styles.number}>
-              {(correctAnswersCounter * 100) / questionsAmount}
-            </span>
-            % correct answers
-          </p>
+          <div className={styles.text}>
+            <p>Correct answers:&#32;</p>
+            <p>
+              <span className={styles.number}>
+                {Math.floor((correctAnswersCounter * 100) / questionsAmount)}
+              </span>
+              %
+            </p>
+          </div>
         </li>
         <li>
-          <p className={styles.text}>
-            Time spent on the quiz:&#32;
-            <span className={styles.number}>{totalTime}</span>
-          </p>
+          <div className={styles.text}>
+            <p>Time spent on the quiz:&#32;</p>
+            <p>
+              <span className={styles.number}>{totalTime}</span>
+            </p>
+          </div>
         </li>
         <li>
-          <p className={styles.text}>
-            All questions:{" "}
-            <span className={styles.number}>{questionsAmount} </span>
-          </p>
+          <div className={styles.text}>
+            <p>All questions:</p>
+
+            <p>
+              <span className={styles.number}>{questionsAmount} </span>
+            </p>
+          </div>
         </li>
       </ol>
     </div>

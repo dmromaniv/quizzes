@@ -1,9 +1,18 @@
 @import "@/stylesheets/_vars.scss";
 
 .list {
-  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  padding-left: 10px;
+
   list-style-type: square;
   color: $accentCl;
+
+  @media screen and (min-width: $tabletWidth) {
+    padding-left: 50px;
+  }
 }
 
 .number {
@@ -12,10 +21,17 @@
 }
 
 .text {
+  display: flex;
+  flex-direction: column;
+
   text-align: left;
   font-size: 18px;
-
   color: $mainTextCl;
+
+  @media screen and (min-width: 420px) {
+    flex-direction: row;
+    gap: 10px;
+  }
 }
 
 .correct {
